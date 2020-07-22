@@ -1,4 +1,6 @@
-# bulls_cows_vue
+# Bulls and Cows Vue SPA game
+
+Live - [visit](https://poplauki.eu/bulls_vue/)
 
 ## Project setup
 ```
