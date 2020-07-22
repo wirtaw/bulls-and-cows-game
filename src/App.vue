@@ -8,8 +8,26 @@
       role="navigation"
       aria-label="main navigation"
     >
-      <div class="navbar-brand" />
-      <div class="navbar-menu">
+      <div class="navbar-brand">
+        <div class="navbar-item">
+          Bulls and cows
+        </div>
+        <a
+          role="button"
+          class="navbar-burger"
+          data-target="navMenu"
+          aria-label="menu"
+          aria-expanded="false"
+          @click="openNavigation"
+        >
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+        </a>
+      </div>
+      <div
+        :class="{'navbar-menu': true, 'is-active': navigationMain }"
+      >
         <div class="navbar-start">
           <router-link
             to="/"
@@ -65,11 +83,21 @@
   import { mapActions, mapState } from 'vuex';
   export default {
     name: 'App',
+    data () {
+      return {
+        navigationMain: false
+      }
+    },
     computed: {
       ...mapState({
         total: state => state.total,
         game: state => state.game,
       }),
+    },
+    watch: {
+      $route(to, from) {
+        this.navigationMain = false;
+      }
     },
     created () {
       this.createValue();
@@ -82,6 +110,9 @@
       newGame() {
         this.startNewGame();
       },
+      openNavigation() {
+        this.navigationMain = !this.navigationMain;
+      }
     }
   }
 </script>
