@@ -3,10 +3,10 @@
     <div class="hero-body">
       <div class="container">
         <h1 class="title">
-          Bulls and cows game
+          {{ $t('app.title') }} {{ $t('message.game') }}
         </h1>
         <h2 class="subtitle">
-          Play now!
+          {{ $t('message.play') }} {{ $t('message.now') }}!
         </h2>
         <div
           v-if="win"

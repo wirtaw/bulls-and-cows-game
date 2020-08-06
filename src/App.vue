@@ -3,116 +3,28 @@
     id="app"
     class="app"
   >
-    <nav
-      class="navbar"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div class="navbar-brand">
-        <div class="navbar-item">
-          Bulls and cows
-        </div>
-        <a
-          role="button"
-          class="navbar-burger"
-          data-target="navMenu"
-          aria-label="menu"
-          aria-expanded="false"
-          @click="openNavigation"
-        >
-          <span aria-hidden="true" />
-          <span aria-hidden="true" />
-          <span aria-hidden="true" />
-        </a>
-      </div>
-      <div
-        :class="{'navbar-menu': true, 'is-active': navigationMain }"
-      >
-        <div class="navbar-start">
-          <router-link
-            to="/"
-            class="navbar-item is-active"
-          >
-            Home
-          </router-link>
-          <div
-            v-if="total"
-            class="navbar-item"
-          >
-            Total points - {{ total }}
-          </div>
-        </div>
-        <div class="navbar-end">
-          <div
-            v-if="game && game.length > 0"
-            class="navbar-item"
-          >
-            <button
-              class="button"
-              @click="newGame"
-            >
-              New game
-            </button>
-          </div>
-          <router-link
-            to="/about"
-            class="navbar-item"
-          >
-            About
-          </router-link>
-          <router-link
-            to="/rules"
-            class="navbar-item"
-          >
-            Rules
-          </router-link>
-        </div>
-      </div>
-    </nav>
+    <Navbar />
     <router-view />
-    <footer class="footer">
-      <div class="content has-text-centered">
-        <p>
-          <strong>Poplauki.eu</strong> by <a href="https://poplauki.eu">Poplavskij Vladimir</a>.
-        </p>
-      </div>
-    </footer>
+    <Footer />
   </div>
 </template>
 <script>
-  import { mapActions, mapState } from 'vuex';
+  import Navbar from '@/components/Navbar.vue';
+  import Footer from '@/components/Footer.vue';
+  import { mapActions } from 'vuex';
   export default {
     name: 'App',
-    data () {
-      return {
-        navigationMain: false
-      }
-    },
-    computed: {
-      ...mapState({
-        total: state => state.total,
-        game: state => state.game,
-      }),
-    },
-    watch: {
-      $route(to, from) {
-        this.navigationMain = false;
-      }
+    components: {
+      Navbar,
+      Footer,
     },
     created () {
       this.createValue();
     },
     methods: {
       ...mapActions({
-        startNewGame: 'newGame',
         createValue: 'createValue',
-      }),
-      newGame() {
-        this.startNewGame();
-      },
-      openNavigation() {
-        this.navigationMain = !this.navigationMain;
-      }
+      })
     }
   }
 </script>

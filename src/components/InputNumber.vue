@@ -12,7 +12,7 @@
               :class="{ 'input': true, 'is-danger': errors['userNumber'], 'is-light': !errors['userNumber'] }"
               type="text"
               name="data-userNumber"
-              placeholder="Input your spell"
+              :placeholder="placeholder"
               maxLength="4"
               autocomplete="off"
             >
@@ -23,7 +23,7 @@
               :disabled="!errors['userNumber'] && !win ? false: 'disabled'"
               @click="sendSpell"
             >
-              Make spell
+              {{ $t('message.make') }} {{ $t('message.spell') }}
             </button>
           </p>
         </div>
@@ -32,7 +32,7 @@
     <div class="field is-horizontal">
       <div class="field-body">
         <p :class="{ 'help': true, 'is-danger': errors['userNumber'] }">
-          Input only numbers 0-9. Without reapeat. <span v-if="errors['userNumber']">{{ errors['userNumber'] }}</span>
+          {{ $t('message.help') }} <span v-if="errors['userNumber']">{{ errors['userNumber'] }}</span>
         </p>
       </div>
     </div>
@@ -56,6 +56,9 @@
       ...mapState({
         win: state => state.win,
       }),
+      placeholder () {
+        return this.$t('message.placeholder');
+      }
     },
     watch: {
       userNumber(to, from) {
