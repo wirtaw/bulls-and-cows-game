@@ -68,7 +68,7 @@ export default new Vuex.Store({
     resetGame(state) {
       state.points = 1000;
       state.spell = 0;
-      state.history[`game${state.history.length + 1}`] = [...state.game];
+      state.history[`game${Object.keys(state.history).length + 1}`] = [...state.game];
       state.game = [];
       state.win = false;
     }

@@ -33,6 +33,9 @@ export default {
       sentence2: 'Cyfry muszą być różne.',
       sentence3: 'Następnie gracze z kolei próbują odgadnąć numer przeciwnika, który podaje liczbę meczów.',
       sentence4: 'Jeśli pasujące cyfry znajdują się na swoich właściwych pozycjach, są to „byki”, jeśli na różnych pozycjach, są to „krowy”.'
-    }
+    },
+    yourGames: 'O twoich grach',
+    login: 'zalogowac się',
+    logout: 'wylogowac się'
   }
 };

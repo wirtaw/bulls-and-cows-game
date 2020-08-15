@@ -33,6 +33,9 @@ export default {
       sentence2: 'Visi skaitmenys turi būti skirtingi.',
       sentence3: 'Tada, savo ruožtu, žaidėjai bando atspėti savo priešininko numerį, kuris nurodo rungtynių skaičių.',
       sentence4: 'Jei atitinkami skaitmenys yra teisingoje padėtyje, jie yra „jaučiai“, jei skirtingose vietose - „karvės“.'
-    }
+    },
+    yourGames: 'tavo žaidimai',
+    login: 'prisijungti',
+    logout: 'atsijungti'
   }
 };

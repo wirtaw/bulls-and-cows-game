@@ -117,8 +117,35 @@
         >
           {{ $t('message.total') }} {{ $t('message.points') }} - {{ total }}
         </div>
+        <div
+          v-if="$auth && $auth.user && $auth.user.email"
+          class="navbar-item"
+        >
+          {{ $auth.user.email }}
+        </div>
       </div>
       <div class="navbar-end">
+        <div
+          v-if="!$auth.loading && !hideAuth"
+          class="navbar-item"
+        >
+          <!-- show login when not authenticated -->
+          <button
+            v-if="!$auth.isAuthenticated"
+            class="button is-capitalized"
+            @click="login"
+          >
+            {{ $t('message.login') }}
+          </button>
+          <!-- show logout when authenticated -->
+          <button
+            v-if="$auth.isAuthenticated"
+            class="button is-capitalized"
+            @click="logout"
+          >
+            {{ $t('message.logout') }}
+          </button>
+        </div>
         <div
           v-if="game && game.length > 0"
           class="navbar-item"
@@ -158,7 +185,8 @@ export default {
   },
   data () {
     return {
-      navigationMain: false
+      navigationMain: false,
+      hideAuth: true
     }
   },
   computed: {
@@ -185,6 +213,14 @@ export default {
     selectLang(lang) {
       this.$i18n.locale = lang;
     },
+    login() {
+      this.$auth.loginWithRedirect();
+    },
+    logout() {
+      this.$auth.logout({
+        returnTo: window.location.origin
+      });
+    }
   }
 }
 </script>

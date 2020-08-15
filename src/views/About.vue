@@ -1,17 +1,27 @@
 <template>
   <div class="container">
-    <h1 class="title">
-      About Your games
+    <h1 class="title is-capitalized">
+      {{ $t('message.yourGames') }}
     </h1>
-    <h2 class="subtitle" />
+    <img
+      v-if="$auth && $auth.user && $auth.user.picture"
+      style="width:200px;height:200px;"
+      :src="$auth.user.picture"
+    >
+    <h2
+      v-if="$auth && $auth.user && $auth.user.name"
+      class="subtitle"
+    >
+      {{ $auth.user.name }}
+    </h2>
     <div
       v-for="(table,index,value) in history"
       :key="value"
       class="columns"
     >
       <div class="column">
-        <h3 class="subtitle">
-          Game {{ value + 1 }}
+        <h3 class="subtitle is-capitalized">
+          {{ $t('message.game') }} {{ value + 1 }}
         </h3>
         <table
           v-if="table && table.length > 0"
@@ -23,16 +33,16 @@
                 #
               </th>
               <th className="tableNumber">
-                number
+                {{ $t('message.number') }}
               </th>
               <th className="tableInfo">
-                cows
+                {{ $t('message.cows') }}
               </th>
               <th className="tableInfo">
-                bulls
+                {{ $t('message.bulls') }}
               </th>
               <th className="tablePoints">
-                points
+                {{ $t('message.points') }}
               </th>
             </tr>
           </thead>
