@@ -1,13 +1,29 @@
 <template>
   <div class="container">
-    <h1 class="title">
-      Rules
+    <h1 class="title is-capitalized">
+      {{ $t('message.rules') }}
     </h1>
-    <p>
-      Browser generate random number on load or then You press "New Game" button.<br>
-      The digits must be all different. <br>
-      Then, in turn, the players try to guess their opponent's number who gives the number of matches. <br>
-      If the matching digits are in their right positions, they are "bulls", if in different positions, they are "cows". <br>
+    <p class="has-text-left">
+      <span
+        v-if="$t('message.rulesItems.sentence1')"
+        class="has-text-left"
+      >{{ $t('message.rulesItems.sentence1') }}</span>
+      <br v-if="$t('message.rulesItems.sentence1')">
+      <span
+        v-if="$t('message.rulesItems.sentence2')"
+        class="has-text-left"
+      >{{ $t('message.rulesItems.sentence2') }}</span>
+      <br v-if="$t('message.rulesItems.sentence2')">
+      <span
+        v-if="$t('message.rulesItems.sentence3')"
+        class="has-text-left"
+      >{{ $t('message.rulesItems.sentence3') }}</span>
+      <br v-if="$t('message.rulesItems.sentence3')">
+      <span
+        v-if="$t('message.rulesItems.sentence4')"
+        class="has-text-left"
+      >{{ $t('message.rulesItems.sentence4') }}</span>
+      <br v-if="$t('message.rulesItems.sentence4')">
     </p>
   </div>
 </template>

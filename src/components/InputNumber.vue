@@ -9,7 +9,7 @@
             <input
               id="data-userNumber"
               v-model="userNumber"
-              :class="{ 'input': true, 'is-danger': errors['userNumber'], 'is-light': !errors['userNumber'] }"
+              :class="{ 'input': true, 'is-danger': errors['userNumber'].length > 0, 'is-light': errors['userNumber'].length === 0 }"
               type="text"
               name="data-userNumber"
               :placeholder="placeholder"
@@ -20,7 +20,7 @@
           <p class="control">
             <button
               class="button"
-              :disabled="!errors['userNumber'] && !win ? false: 'disabled'"
+              :disabled="errors['userNumber'].length === 0 && !win ? false: 'disabled'"
               @click="sendSpell"
             >
               {{ $t('message.make') }} {{ $t('message.spell') }}
@@ -31,8 +31,8 @@
     </div>
     <div class="field is-horizontal">
       <div class="field-body">
-        <p :class="{ 'help': true, 'is-danger': errors['userNumber'] }">
-          {{ $t('message.help') }} <span v-if="errors['userNumber']">{{ errors['userNumber'] }}</span>
+        <p :class="{ 'help': true, 'is-danger': errors['userNumber'].length > 0 }">
+          {{ $t('message.help') }} <span v-if="errors['userNumber'].length > 0">{{ errors['userNumber'].join(', ') }}</span>
         </p>
       </div>
     </div>
@@ -47,7 +47,7 @@
     data () {
       return {
         errors: {
-          'userNumber': null
+          'userNumber': []
         },
         userNumber: ''
       }
@@ -73,12 +73,13 @@
         this.makeSpell(this.userNumber);
       },
       checkForm(value) {
+        this.errors['userNumber'] = [];
         let result = true;
         let number = value.trim();
 
         if (number.length > 4) {
           result = false;
-          this.errors['userNumber'] = 'More than 4 digits';
+          this.errors['userNumber'].push(this.$t('message.errors.moreSymols'));
         }
 
         if (result) {
@@ -88,20 +89,20 @@
               unqNumbers.push(number[i]);
             } else {
               result = false;
-              this.errors['userNumber'] = 'Repeat numbers';
+              this.errors['userNumber'].push(this.$t('message.errors.repeat'));
               break;
             }
           }
           const regex = /[0-9]/g;
           const found = value.trim().match(regex);
 
-          if (result && found && Array.isArray(found) && found.length !== number.length) {
+          if (!result || !found || !Array.isArray(found) || found.length !== number.length) {
             result = false;
-            this.errors['userNumber'] = 'Digit values in the input.';
+            this.errors['userNumber'].push(this.$t('message.errors.digitSymbols'));
           }
 
           if(result) {
-            this.errors['userNumber'] = null;
+            this.errors['userNumber'] = [];
           }
         }
 

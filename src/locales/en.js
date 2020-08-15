@@ -22,6 +22,17 @@ export default {
     'new': 'new',
     about: 'about',
     rules: 'rules',
-    help: 'Input only numbers 0-9. Without reapeat.'
+    help: 'Input only numbers 0-9. Without reapeat.',
+    errors: {
+      moreSymols: 'More than 4 digits',
+      repeat: 'Repeat numbers',
+      digitSymbols: 'Digit values in the input.'
+    },
+    rulesItems: {
+      sentence1: 'Browser generate random number on load or then You press "New Game" button.',
+      sentence2: 'The digits must be all different.',
+      sentence3: 'Then, in turn, the players try to guess their opponent\'s number who gives the number of matches.',
+      sentence4: 'If the matching digits are in their right positions, they are "bulls", if in different positions, they are "cows".'
+    }
   }
 };
