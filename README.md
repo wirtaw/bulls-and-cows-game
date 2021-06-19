@@ -1,36 +1,23 @@
-# Bulls and Cows Vue SPA game
+# Bulls cows vue parcel
 
-Live - [visit](https://poplauki.eu/bulls_vue/)
+## Application
 
-## Project setup
-```
-yarn install
-```
+### Prepare project
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+* clone this repo
 
-### Compiles and minifies for production
-```
-yarn build
-```
+### Install application
 
-### Run your unit tests
-```
-yarn test:unit
-```
+Run `npm i` or `yarn`
 
-### Run your end-to-end tests
-```
-yarn test:e2e
-```
+### Run application
 
-### Lints and fixes files
-```
-yarn lint
-```
+Run `npm run dev` or `yarn dev`
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Frontend
+
+Frontend project is placed in `src/web` directory
+
+### Dev
+
+Run `npm run dev` `yarn dev`
