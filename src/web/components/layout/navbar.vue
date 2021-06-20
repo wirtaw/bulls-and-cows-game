@@ -31,70 +31,7 @@
         >
           {{ $t('message.home') }}
         </router-link>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a
-            v-if="$i18n.locale === 'en'"
-            class="navbar-link"
-            :style="{'width':`120px`}"
-          >
-            gb
-          </a>
-          <a
-            v-if="$i18n.locale === 'lt'"
-            class="navbar-link"
-            :style="{'width':`120px`}"
-          >
-            lt
-          </a>
-          <a
-            v-if="$i18n.locale === 'ru'"
-            class="navbar-link"
-            :style="{'width':`120px`}"
-          >
-            ru
-          </a>
-          <a
-            v-if="$i18n.locale === 'pl'"
-            class="navbar-link"
-            :style="{'width':`120px`}"
-          >
-            pl
-          </a>
-          <div class="navbar-dropdown">
-            <a
-              v-if="$i18n.locale !== 'en'"
-              class="navbar-item"
-              href="#"
-              @click="selectLang('en')"
-            >
-              gb
-            </a>
-            <a
-              v-if="$i18n.locale !== 'lt'"
-              class="navbar-item"
-              href="#"
-              @click="selectLang('lt')"
-            >
-              lt
-            </a>
-            <a
-              v-if="$i18n.locale !== 'ru'"
-              class="navbar-item"
-              href="#"
-              @click="selectLang('ru')"
-            >
-              ru
-            </a>
-            <a
-              v-if="$i18n.locale !== 'pl'"
-              class="navbar-item"
-              href="#"
-              @click="selectLang('pl')"
-            >
-              pl
-            </a>
-          </div>
-        </div>
+
         <div
           v-if="total"
           class="navbar-item"
@@ -126,48 +63,113 @@
         >
           {{ $t('message.rules') }}
         </router-link>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a
+            v-if="$i18n.locale === 'en'"
+            class="navbar-link"
+            :style="{'width':`120px`}"
+          >
+            <FlagIcon name="gb"></FlagIcon>
+          </a>
+          <a
+            v-if="$i18n.locale === 'lt'"
+            class="navbar-link"
+            :style="{'width':`120px`}"
+          >
+            <FlagIcon name="lt"></FlagIcon>
+          </a>
+          <a
+            v-if="$i18n.locale === 'ru'"
+            class="navbar-link"
+            :style="{'width':`120px`}"
+          >
+            <FlagIcon name="ru"></FlagIcon>
+          </a>
+          <a
+            v-if="$i18n.locale === 'pl'"
+            class="navbar-link"
+            :style="{'width':`120px`}"
+          >
+            <FlagIcon name="pl"></FlagIcon>
+          </a>
+          <div class="navbar-dropdown">
+            <a
+              v-if="$i18n.locale !== 'en'"
+              class="navbar-item"
+              href="#"
+              @click="selectLang('en')"
+            >
+              <FlagIcon name="gb"></FlagIcon>
+            </a>
+            <a
+              v-if="$i18n.locale !== 'lt'"
+              class="navbar-item"
+              href="#"
+              @click="selectLang('lt')"
+            >
+              <FlagIcon name="lt"></FlagIcon>
+            </a>
+            <a
+              v-if="$i18n.locale !== 'ru'"
+              class="navbar-item"
+              href="#"
+              @click="selectLang('ru')"
+            >
+              <FlagIcon name="ru"></FlagIcon>
+            </a>
+            <a
+              v-if="$i18n.locale !== 'pl'"
+              class="navbar-item"
+              href="#"
+              @click="selectLang('pl')"
+            >
+              <FlagIcon name="pl"></FlagIcon>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
 </template>
 
 <script>
-  import { mapActions, mapState } from 'vuex'
+  import { mapActions, mapState } from 'vuex';
+  import FlagIcon from '../base/FlagIcon';
 
-    export default {
-        name: 'Navbar',
-        components: {
-          
-        },
-        data () {
-          return {
-            navigationMain: false,
-          }
-        },
-        computed: {
-          ...mapState({
-            total: state => state.total,
-            game: state => state.game,
-          }),
-        },
-        watch: {
-          $route(to, from) {
-            this.navigationMain = false;
-          }
-        },
-        methods: {
-          ...mapActions({
-            startNewGame: 'newGame',
-          }),
-          newGame() {
-            this.startNewGame();
-          },
-          openNavigation() {
-            this.navigationMain = !this.navigationMain;
-          },
-          selectLang(lang) {
-            this.$i18n.locale = lang;
-          }
+  export default {
+      name: 'Navbar',
+      components: {
+        FlagIcon
+      },
+      data () {
+        return {
+          navigationMain: false,
         }
-    }
+      },
+      computed: {
+        ...mapState({
+          total: state => state.total,
+          game: state => state.game,
+        }),
+      },
+      watch: {
+        $route(to, from) {
+          this.navigationMain = false;
+        }
+      },
+      methods: {
+        ...mapActions({
+          startNewGame: 'newGame',
+        }),
+        newGame() {
+          this.startNewGame();
+        },
+        openNavigation() {
+          this.navigationMain = !this.navigationMain;
+        },
+        selectLang(lang) {
+          this.$i18n.locale = lang;
+        }
+      }
+  }
 </script>

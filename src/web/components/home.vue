@@ -2,7 +2,7 @@
 <template>
   <div class="vueapp">
     <navbar></navbar>
-    <section class="hero is-info vueapp-content">
+    <section class="hero is-medium is-info vueapp-content">
       <div class="hero-body">
         <p class="title">
           {{ $t('message.verb.play') }} {{ $t('app.title') }}
