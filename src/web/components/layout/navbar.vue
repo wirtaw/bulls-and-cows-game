@@ -36,7 +36,7 @@
           v-if="total"
           class="navbar-item"
         >
-          {{ $t('message.total') }} {{ $t('message.points') }} - {{ total }}
+          {{ $t('message.total') }} {{ $t('message.points') }} : <span class="tag is-info is-light"> {{ total }} </span>
         </div>
       </div>
       <div class="navbar-end">

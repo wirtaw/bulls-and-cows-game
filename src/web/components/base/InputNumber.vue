@@ -55,6 +55,7 @@
     computed: {
       ...mapState({
         win: state => state.win,
+        init: state => state.init,
       }),
       placeholder () {
         return this.$t('message.placeholder');
@@ -63,6 +64,11 @@
     watch: {
       userNumber(to, from) {
         let value = this.checkForm(to);
+      },
+      init(to, from) {
+        if (to) {
+          this.userNumber = '';
+        }
       }
     },
     methods: {
