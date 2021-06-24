@@ -10,10 +10,11 @@
               id="data-userNumber"
               v-model="userNumber"
               :class="{ 'input': true, 'is-danger': errors['userNumber'].length > 0, 'is-light': errors['userNumber'].length === 0 }"
-              type="text"
+              type="number"
               name="data-userNumber"
               :placeholder="placeholder"
-              maxLength="4"
+              min="0123"
+              max="9876"
               autocomplete="off"
             >
           </p>
