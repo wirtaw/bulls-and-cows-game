@@ -2,7 +2,7 @@
   "name": "bulls-cows-vue-parcel",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/web/index.js",
   "scripts": {
     "lint:fix": "eslint ./src --fix",
     "lint": "eslint ./src",
