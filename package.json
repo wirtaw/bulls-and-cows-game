@@ -6,7 +6,7 @@
   "scripts": {
     "lint:fix": "eslint ./src --fix",
     "lint": "eslint ./src",
-    "clean": "rm -rf dist/",
+    "clean": "rm -rf dist/ && rm -rf .cache",
     "dev": "npm run clean && parcel src/web/index.html --no-hmr --out-dir ./dist/web/ --public-url /bulls_vue",
     "build": "npm run clean && parcel build src/web/index.html --out-dir ./dist/web/ --public-url /bulls_vue"
   },

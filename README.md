@@ -1,5 +1,11 @@
 # Bulls cows vue parcel
 
+## Environment
+
+- Node v16.15.1
+- npm 8.11.0
+- yarn 1.22.19
+
 ## Application
 
 ### Prepare project
