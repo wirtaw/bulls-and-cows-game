@@ -2,8 +2,8 @@
 
 ## Environment
 
-- Node v16.15.1
-- npm 8.11.0
+- Node v16.17.0
+- npm 9.4.1
 - yarn 1.22.19
 
 ## Application
