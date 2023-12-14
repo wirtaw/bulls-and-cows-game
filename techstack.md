@@ -1,7 +1,10 @@
 <!--
---- Readme.md Snippet without images Start ---
+&lt;--- Readme.md Snippet without images Start ---&gt;
 ## Tech Stack
 wirtaw/bulls-and-cows-game is built on the following main stack:
+
+- [Sass](http://sass-lang.com/) – CSS Pre-processors / Extensions
+- [Pug](https://pugjs.org) – Templating Languages & Extensions
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Languages
 - [Babel](http://babeljs.io/) – JavaScript Compilers
 - [ESLint](http://eslint.org/) – Code Review
@@ -11,11 +14,15 @@ wirtaw/bulls-and-cows-game is built on the following main stack:
 - [Parcel](https://parceljs.org/) – JS Build Tools / JS Task Runners
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet without images End ---
 
---- Readme.md Snippet with images Start ---
+&lt;--- Readme.md Snippet without images End ---&gt;
+
+&lt;--- Readme.md Snippet with images Start ---&gt;
 ## Tech Stack
 wirtaw/bulls-and-cows-game is built on the following main stack:
+
+- <img width='25' height='25' src='https://img.stackshare.io/service/1171/jCR2zNJV.png' alt='Sass'/> [Sass](http://sass-lang.com/) – CSS Pre-processors / Extensions
+- <img width='25' height='25' src='https://img.stackshare.io/service/1175/pug.png' alt='Pug'/> [Pug](https://pugjs.org) – Templating Languages & Extensions
 - <img width='25' height='25' src='https://img.stackshare.io/service/1209/javascript.jpeg' alt='JavaScript'/> [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Languages
 - <img width='25' height='25' src='https://img.stackshare.io/service/2739/-1wfGjNw.png' alt='Babel'/> [Babel](http://babeljs.io/) – JavaScript Compilers
 - <img width='25' height='25' src='https://img.stackshare.io/service/3337/Q4L7Jncy.jpg' alt='ESLint'/> [ESLint](http://eslint.org/) – Code Review
@@ -25,18 +32,19 @@ wirtaw/bulls-and-cows-game is built on the following main stack:
 - <img width='25' height='25' src='https://img.stackshare.io/service/8054/fC6Wad-S_400x400.jpg' alt='Parcel'/> [Parcel](https://parceljs.org/) – JS Build Tools / JS Task Runners
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet with images End ---
+
+&lt;--- Readme.md Snippet with images End ---&gt;
 -->
 <div align="center">
 
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [wirtaw/bulls-and-cows-game](https://github.com/wirtaw/bulls-and-cows-game)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|30<br/>Tools used|11/11/23 <br/>Report generated|
+|31<br/>Tools used|12/14/23 <br/>Report generated|
 |------|------|
 </div>
 
-## <img src='https://img.stackshare.io/languages.svg'/> Languages (1)
+## <img src='https://img.stackshare.io/languages.svg'/> Languages (2)
 <table><tr>
   <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/1209/javascript.jpeg' alt='JavaScript'>
@@ -46,12 +54,28 @@ Full tech stack [here](/techstack.md)
   <sub></sub>
 </td>
 
+<td align='center'>
+  <img width='36' height='36' src='https://img.stackshare.io/service/1175/pug.png' alt='Pug'>
+  <br>
+  <sub><a href="https://pugjs.org">Pug</a></sub>
+  <br>
+  <sub></sub>
+</td>
+
 </tr>
 </table>
 
-## <img src='https://img.stackshare.io/frameworks.svg'/> Frameworks (2)
+## <img src='https://img.stackshare.io/frameworks.svg'/> Frameworks (3)
 <table><tr>
   <td align='center'>
+  <img width='36' height='36' src='https://img.stackshare.io/service/1171/jCR2zNJV.png' alt='Sass'>
+  <br>
+  <sub><a href="http://sass-lang.com/">Sass</a></sub>
+  <br>
+  <sub></sub>
+</td>
+
+<td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/3837/paeckCWC.png' alt='Vue.js'>
   <br>
   <sub><a href="http://vuejs.org/">Vue.js</a></sub>
@@ -123,10 +147,23 @@ Full tech stack [here](/techstack.md)
 </tr>
 </table>
 
+## Other (1)
+<table><tr>
+  <td align='center'>
+  <img width='36' height='36' src='https://img.stackshare.io/service/2270/no-img-open-source.png' alt='HTML'>
+  <br>
+  <sub><a href="http://">HTML</a></sub>
+  <br>
+  <sub></sub>
+</td>
 
-## <img src='https://img.stackshare.io/group.svg' /> Open source packages (21)</h2>
+</tr>
+</table>
 
-## <img width='24' height='24' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png'/> npm (21)
+
+## <img src='https://img.stackshare.io/group.svg' /> Open source packages (19)</h2>
+
+## <img width='24' height='24' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png'/> npm (19)
 
 |NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
 |:------|:------|:------|:------|:------|:------|
@@ -144,8 +181,6 @@ Full tech stack [here](/techstack.md)
 |[eslint-plugin-promise](https://www.npmjs.com/eslint-plugin-promise)|v5.2.0|02/04/23|Poplavskij Vladimir |ISC|N/A|
 |[eslint-plugin-vue](https://www.npmjs.com/eslint-plugin-vue)|v7.20.0|02/04/23|Poplavskij Vladimir |MIT|N/A|
 |[parcel-bundler](https://www.npmjs.com/parcel-bundler)|v1.12.5|07/17/21|Poplavskij Vladimir |MIT|N/A|
-|[pug](https://www.npmjs.com/pug)|v3.0.2|07/21/20|Poplavskij Vladimir |MIT|N/A|
-|[sass](https://www.npmjs.com/sass)|v1.53.0|08/01/21|Poplavskij Vladimir |MIT|N/A|
 |[vue](https://www.npmjs.com/vue)|v2.7.14|07/21/20|Poplavskij Vladimir |MIT|N/A|
 |[vue-hot-reload-api](https://www.npmjs.com/vue-hot-reload-api)|v2.3.4|02/04/23|Poplavskij Vladimir |MIT|N/A|
 |[vue-i18n](https://www.npmjs.com/vue-i18n)|v8.28.2|02/04/23|Poplavskij Vladimir |MIT|N/A|
@@ -155,4 +190,4 @@ Full tech stack [here](/techstack.md)
 <br/>
 <div align='center'>
 
-Generated via [Stack File](https://github.com/apps/stack-file)
+Generated via [Stack File](https://github.com/marketplace/stack-file)
