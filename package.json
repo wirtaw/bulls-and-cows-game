@@ -4,12 +4,11 @@
   "description": "",
   "main": "src/web/index.js",
   "engines": {
-    "node": "v16.17.0",
-    "npm": "9.4.1"
+    "node": "v16.20.2",
+    "npm": "8.9.4"
   },
   "scripts": {
-    "lint:fix": "eslint ./src --fix",
-    "lint": "eslint ./src",
+    "lint": "eslint ./src --fix",
     "clean": "rm -rf dist/ && rm -rf .cache",
     "dev": "npm run clean && parcel src/web/index.html --no-hmr --out-dir ./dist/web/ --public-url /bulls_vue",
     "build": "npm run clean && parcel build src/web/index.html --out-dir ./dist/web/ --public-url /bulls_vue"
@@ -38,12 +37,12 @@
   "dependencies": {
     "@vue/component-compiler-utils": "^3.2.2",
     "pug": "^3.0.2",
-    "sass": "^1.37.0",
-    "vue": "^2.7.14",
+    "sass": "1.75.0",
+    "vue": "2.7.16",
     "vue-hot-reload-api": "^2.3.3",
     "vue-i18n": "^8.28.2",
     "vue-router": "^3.6.5",
-    "vue-template-compiler": "^2.7.14",
+    "vue-template-compiler": "2.7.16",
     "vuex": "^3.6.2"
   }
 }
