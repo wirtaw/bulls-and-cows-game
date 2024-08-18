@@ -1,10 +1,9 @@
-# Bulls cows vue parcel
+# Bulls cows vue + vite
 
 ## Environment
 
-- Node v16.20.2
-- npm 8.9.4
-- yarn 1.22.22
+- Node v20.14.0
+- npm 10.7.0
 
 ## Application
 
@@ -14,16 +13,31 @@
 
 ### Install application
 
-Run `npm i` or `yarn`
+### Run Unit Tests with [Vitest](https://vitest.dev/)
 
 ### Run application
 
-Run `npm run dev` or `yarn dev`
+### Run End-to-End Tests with [Playwright](https://playwright.dev)
 
-## Frontend
+```sh
+# Install browsers for the first run
+npx playwright install
 
-Frontend project is placed in `src/web` directory
+# When testing on CI, must build the project first
+npm run build
 
-### Dev
+# Runs the end-to-end tests
+npm run test:e2e
+# Runs the tests only on Chromium
+npm run test:e2e -- --project=chromium
+# Runs the tests of a specific file
+npm run test:e2e -- tests/example.spec.ts
+# Runs the tests in debug mode
+npm run test:e2e -- --debug
+```
 
-Run `npm run dev` `yarn dev`
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```
