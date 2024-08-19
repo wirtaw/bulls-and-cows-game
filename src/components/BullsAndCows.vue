@@ -5,7 +5,7 @@
     <input v-model="userGuess" maxlength="4" placeholder="Enter your guess" />
     <button v-if="!end" @click="checkGuess">Guess</button>
     <button v-if="end" @click="startGame">Start new game</button>
-    <p v-if="message">{{ message }}</p>
+    <p v-if="message" :class="messageClass">{{ message }}</p>
     <ul>
       <li v-for="(attempt, index) in attempts" :key="index">
         Guess: {{ attempt.guess }} - Bulls: {{ attempt.bulls }}, Cows: {{ attempt.cows }}
@@ -23,7 +23,8 @@ export default {
       attempts: [],
       message: '',
       countGueses: 0,
-      end: false
+      end: false,
+      messageClass: 'notification is-success is-light'
     }
   },
   methods: {
@@ -37,10 +38,12 @@ export default {
     checkGuess() {
       if (this.userGuess.length !== 4 || isNaN(this.userGuess)) {
         this.message = 'Please enter a valid 4-digit number.'
+        this.messageClass = 'notification is-warning is-light'
         return
       }
       if (new Set(this.userGuess).size !== 4) {
         this.message = 'Digits must be unique.'
+        this.messageClass = 'notification is-warning is-light'
         return
       }
 
@@ -51,8 +54,10 @@ export default {
       if (bulls === 4) {
         this.end = true
         this.message = `Congratulations! You guessed the number with ${this.countGueses} steps!`
+        this.messageClass = 'notification is-success is-light'
       } else {
         this.message = `Bulls: ${bulls}, Cows: ${cows}`
+        this.messageClass = 'notification is-success is-light'
       }
 
       this.userGuess = ''
@@ -62,6 +67,7 @@ export default {
       this.secretNumber = this.generateSecretNumber()
       this.attempts = []
       this.message = ''
+      this.messageClass = 'notification is-success is-light'
       this.countGueses = 0
       this.end = false
     },
