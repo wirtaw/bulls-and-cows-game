@@ -1,5 +1,5 @@
 <script>
-import BullsAndCows from './components/BullsAndCows.vue'
+import BullsAndCows from '@/components/BullsAndCows.vue'
 
 export default {
   name: 'App',

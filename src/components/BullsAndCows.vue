@@ -4,7 +4,7 @@
     <p>Guess the 4-digit number:</p>
     <input v-model="userGuess" maxlength="4" placeholder="Enter your guess" />
     <button v-if="!end" @click="checkGuess">Guess</button>
-    <button v-if="end" @click="startGame">Start new game</button>
+    <button v-else-if="end" @click="startGame">Start new game</button>
     <p v-if="message" :class="messageClass">{{ message }}</p>
     <ul>
       <li v-for="(attempt, index) in attempts" :key="index">
