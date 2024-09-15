@@ -98,7 +98,7 @@ export default {
   border: 1px solid #ccc;
   border-radius: 10px;
   background-color: #f9f9f9;
-  color:#000;
+  color: #000;
 }
 input {
   padding: 8px;
